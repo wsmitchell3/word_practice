@@ -3,7 +3,7 @@ A script for creating Morse Code practice audio files, by Bill Mitchell AE0EE
 
 ## Requirements
 * R
-* ebook2cw
+* [ebook2cw](https://fkurz.net/ham/ebook2cw.html "ebook2cw page")
 
 ## Usage
 Enter your callsign, name, city, state/province, any club callsign(s), mentor callsign(s), or other words specific to your situation in callsign_specific.txt, with one word per line.  Spaces within a line are okay for multi-word cities/states, _etc_.
