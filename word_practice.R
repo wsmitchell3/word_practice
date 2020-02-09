@@ -1,3 +1,5 @@
+#!/usr/bin/Rscript
+
 # word_practice.R
 # by Bill Mitchell
 # 9/17/13
@@ -19,21 +21,21 @@ get_word_files <- function(customFiles=list(), useDefault=TRUE){
 # useDefault: use (or do not use) the default word files
 # returns: list of filenames
 
-	existingFiles <- list()
+	existingFiles <- vector()
 
 	for(f in customFiles){ # Append any existing custom files
 		if (file.exists(f)){
-			existingFiles.append(f)
+			existingFiles <- append(existingFiles, f)
 		} else {
-			print("File not found: " + f)
+			print(paste0("File not found: ", f))
 		}
 	}
 
 	for (f in word_files_default){ # Append any existing default files, if used
 		if (file.exists(f) & useDefault){
-			existingFiles.append(f)
+			existingFiles <- append(existingFiles, f)
 		} else {
-			print("File not found: " + f)
+			print(paste0("File not found: ", f))
 		}
 	}
 
@@ -70,6 +72,10 @@ make_practice_audio_files <- function(low_wpm=15, high_wpm=30, my_text="practice
 	# low_wpm: minimum WPM
 	# high_wpm: maximum WPM
 	# my_text: file to ebookify
+
+	if (!file.exists(my_text)){
+		make_practice_text_file()
+	}
 	if(low_wpm<5){
 		low_wpm=5
 	}
