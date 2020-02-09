@@ -1,0 +1,11 @@
+tnx
+fb
+qso
+qsl
+qrp
+name
+qth
+op
+rig
+ant
+dx
